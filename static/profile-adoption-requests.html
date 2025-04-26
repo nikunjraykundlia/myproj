@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Adoption Requests</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #f6f8fa; margin: 0; padding: 2rem; }
+    .container { max-width: 500px; margin: auto; }
+    h2 { margin-bottom: 1rem; }
+    form { display: flex; flex-direction: column; gap: 0.5rem; background: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+    input, textarea { padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #e94057; color: #fff; border: none; padding: 0.6rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    .requests-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+    .request-card { background: #fff; border-radius: 8px; box-shadow: 0 1px 4px #0001; padding: 1rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .animal-photo { width: 56px; height: 56px; object-fit: cover; border-radius: 6px; background: #eee; }
+    .request-info { flex: 1; }
+    .animal-name { font-weight: bold; font-size: 1.1rem; margin-bottom: 0.2rem; }
+    .request-text { margin-bottom: 0.4rem; color: #444; }
+    .timestamp { font-size: 0.9rem; color: #888; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>My Adoption Requests</h2>
+    <form id="adoption-form">
+      <input id="animalName" placeholder="Animal Name" required>
+      <input id="animalPhoto" placeholder="Photo URL (optional)">
+      <textarea id="requestText" placeholder="Why do you want to adopt?" required></textarea>
+      <input id="userName" placeholder="Your Name" required>
+      <button type="submit">Submit Request</button>
+    </form>
+    <div class="requests-list" id="requestsList"></div>
+  </div>
+  <script>
+    function formatDate(ts) {
+      const d = new Date(ts);
+      return d.toLocaleString();
+    }
+    function getRequests() {
+      return JSON.parse(localStorage.getItem('adoptionRequests') || '[]');
+    }
+    function saveRequests(reqs) {
+      localStorage.setItem('adoptionRequests', JSON.stringify(reqs));
+    }
+    function renderRequests() {
+      const list = document.getElementById('requestsList');
+      let reqs = getRequests();
+      reqs.sort((a, b) => b.timestamp - a.timestamp);
+      list.innerHTML = '';
+      for (const req of reqs) {
+        const card = document.createElement('div');
+        card.className = 'request-card';
+        card.innerHTML = `
+          <img class="animal-photo" src="${req.animalPhoto || 'https://placekitten.com/56/56'}" alt="Animal Photo">
+          <div class="request-info">
+            <div class="animal-name">${req.animalName}</div>
+            <div class="request-text">${req.requestText}</div>
+            <div class="timestamp">Requested by ${req.userName} on ${formatDate(req.timestamp)}</div>
+          </div>
+        `;
+        list.appendChild(card);
+      }
+    }
+    document.getElementById('adoption-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const animalName = document.getElementById('animalName').value.trim();
+      const animalPhoto = document.getElementById('animalPhoto').value.trim();
+      const requestText = document.getElementById('requestText').value.trim();
+      const userName = document.getElementById('userName').value.trim();
+      const timestamp = Date.now();
+      if (!animalName || !requestText || !userName) return;
+      const newReq = { animalName, animalPhoto, requestText, userName, timestamp };
+      let reqs = getRequests();
+      reqs.unshift(newReq);
+      saveRequests(reqs);
+      renderRequests();
+      this.reset();
+    });
+    renderRequests();
+  </script>
+</body>
+</html>
