@@ -5,11 +5,10 @@ export default function LawsAndRegulationsPage() {
     <div className="max-w-3xl mx-auto py-12 px-4">
       <div className="bg-white/90 shadow-xl rounded-2xl border border-gray-100 p-8 sm:p-10">
         <h1 className="text-4xl font-extrabold mb-8 text-center text-primary-700 tracking-tight drop-shadow-sm">
-          🏛️ Laws & Regulations: Animal Welfare & Adoption in India
+          Laws & Regulations: Animal Welfare & Adoption in India
         </h1>
         <section className="mb-10 bg-primary-50 rounded-xl p-6 border-l-4 border-primary-300 shadow-sm">
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">📋</span>
             <h2 className="text-2xl font-semibold text-primary-800">General Rules for Pet Adoption & Ownership</h2>
           </div>
           <ul className="list-disc pl-7 space-y-2 text-gray-800">
@@ -29,7 +28,6 @@ export default function LawsAndRegulationsPage() {
         <div className="border-t border-gray-200 my-8" />
         <section className="mb-10 bg-yellow-50 rounded-xl p-6 border-l-4 border-yellow-300 shadow-sm">
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">⚖️</span>
             <h2 className="text-2xl font-semibold text-yellow-900">Key Legal Requirements</h2>
           </div>
           <ul className="list-disc pl-7 space-y-2 text-gray-800">
@@ -43,7 +41,6 @@ export default function LawsAndRegulationsPage() {
         <div className="border-t border-gray-200 my-8" />
         <section className="mb-6 bg-green-50 rounded-xl p-6 border-l-4 border-green-300 shadow-sm">
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-2xl">💚</span>
             <h2 className="text-2xl font-semibold text-green-900">Ethical Guidelines & Best Practices</h2>
           </div>
           <ul className="list-disc pl-7 space-y-2 text-gray-800">

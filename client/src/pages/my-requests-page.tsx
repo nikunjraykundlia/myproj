@@ -105,7 +105,8 @@ export default function MyRequestsPage() {
 
                   <div className="mt-4 flex justify-between items-center">
                     <Button variant="outline" size="sm" asChild>
-                      <Link href={`/animals/${latestRequest.animal.id}`}>View Animal</Link>
+                      {/* <Link href={`/animals/${latestRequest.animal.id}`}>View Animal</Link> */}
+                      <Link href={`/animals/${(latestRequest.animal.id ?? latestRequest.animal._id).toString()}`}>View Details</Link>
                     </Button>
                   </div>
                 </div>

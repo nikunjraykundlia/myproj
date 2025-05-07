@@ -75,7 +75,12 @@ export default function Navbar() {
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                         <Avatar className="h-8 w-8 bg-primary">
-                          <AvatarFallback>{user?.name ? getInitials(user.name) : "??"}</AvatarFallback>
+                          <img
+                            src="https://cdn-icons-png.flaticon.com/512/8792/8792047.png"
+                            alt="User Avatar"
+                            className="h-8 w-8 rounded-full object-cover"
+                          />
+                          <AvatarFallback>{user?.name ? getInitials("User") : "??"}</AvatarFallback>
                         </Avatar>
                       </Button>
                     </DropdownMenuTrigger>
