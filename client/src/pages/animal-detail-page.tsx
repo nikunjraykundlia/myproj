@@ -97,6 +97,7 @@ export default function AnimalDetailPage() {
     setTimeout(() => {
       const newUpdate = {
         note,
+        // @ts-ignore
         user: user && user._doc ? user._doc.name : user.name,
         date: new Date().toLocaleString("en-IN", { hour12: false })
       };

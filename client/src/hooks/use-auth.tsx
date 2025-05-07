@@ -23,6 +23,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const { toast } = useToast();
   const [dummyUser, setDummyUser] = useState<User | null>(null);
 
+  
+
   const {
     data: user,
     error,
@@ -55,7 +57,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setDummyUser(user);
       toast({
         title: "Welcome back!",
-        description: `You've successfully logged in as ${user.name}`,
+        description: `You've successfully logged in as ${user.name || 'Admin'}`,
       });
     },
     onError: (error: Error) => {
