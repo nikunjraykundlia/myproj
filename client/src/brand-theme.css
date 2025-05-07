@@ -1,0 +1,91 @@
+/* PawCare Brand Theme - Modern, Friendly, Accessible */
+
+:root {
+  /* Brand Colors */
+  --pawcare-primary: #ffffff; /* orange-pink gradient start */
+  --pawcare-secondary: #feb47b; /* orange-pink gradient end */
+  --pawcare-accent: #f857a6; /* accent pink */
+  --pawcare-bg: #fff7f0; /* light background */
+  --pawcare-surface: #ffffff; /* card background */
+  --pawcare-border: #f3e5e1; /* subtle border */
+  --pawcare-text: #22223b; /* main text */
+  --pawcare-muted: #8d99ae; /* muted text */
+  --pawcare-success: #43aa8b;
+  --pawcare-error: #e63946;
+}
+
+
+body {
+  background: var(--pawcare-bg);
+  color: var(--pawcare-text);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.card, .rounded-lg, .shadow-sm {
+  background: var(--pawcare-surface);
+  border: 1px solid var(--pawcare-border);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(255,126,95,0.06);
+}
+
+button, .gradient-button, .btn-primary {
+  background: linear-gradient(90deg, var(--pawcare-primary), var(--pawcare-accent));
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(255,126,95,0.10);
+}
+button:hover, .gradient-button:hover, .btn-primary:hover {
+  background: linear-gradient(90deg, var(--pawcare-accent), var(--pawcare-primary));
+  box-shadow: 0 4px 16px 0 rgba(255,126,95,0.12);
+}
+
+.navbar, .navbar-container {
+  background: var(--pawcare-surface);
+  border-bottom: 1.5px solid var(--pawcare-border);
+  box-shadow: 0 2px 8px 0 rgba(255,126,95,0.04);
+}
+
+input, textarea, select {
+  border-radius: 0.5rem;
+  border: 1px solid var(--pawcare-border);
+  background: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--pawcare-primary);
+  border-color: var(--pawcare-primary);
+}
+
+.text-primary {
+  color: var(--pawcare-primary) !important;
+}
+.text-accent {
+  color: var(--pawcare-accent) !important;
+}
+.bg-gradient-pawcare {
+  background: linear-gradient(90deg, var(--pawcare-primary), var(--pawcare-accent));
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pawcare-primary);
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar {
+  background: var(--pawcare-bg);
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .card, .rounded-lg {
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+  button, .gradient-button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

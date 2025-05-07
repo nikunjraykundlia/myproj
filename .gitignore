@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.DS_Store
+server/public/
+vite.config.ts.*
+*.tar.gz
+
+# Ignore build output
+/build/
+/.next/
+/.vercel/
+
+# Ignore coverage
+coverage/
+
+# Ignore local env files
+.env
+.env.*.local
+
+# But DO NOT ignore lock files!
+!package-lock.json
+!yarn.lock
+!pnpm-lock.yaml
