@@ -221,11 +221,7 @@ export default function AnimalDetailPage() {
 
                 {isVetOrAdmin && (
                   <>
-                    <Button variant="secondary" asChild>
-                      <Link href={`/treatment/${id}`}>Manage Treatment</Link>
-                    </Button>
-                    <Button 
-                      variant="destructive"
+                    <Button variant="destructive"
                       onClick={() => setDeleteDialogOpen(true)}
                     >
                       Delete
