@@ -15,9 +15,7 @@
 7. [Usage](#-usage)  
 8. [Database Migrations & Seeding](#-database-migrations--seeding)  
 9. [Deployment](#-deployment)  
-10. [Contributing](#-contributing)  
-11. [License](#-license)  
-12. [Contact](#-contact)  
+10. [License](#-license)  
 
 ---
 
@@ -231,6 +229,9 @@ npm run start
 
 
 > Tip: If deploying to Vercel, vercel.json is pre‑configured for serverless functions.
+
+
+
 
 ---
 
