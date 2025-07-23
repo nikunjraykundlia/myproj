@@ -1,4 +1,4 @@
-# 🐾 Pawcare
+# 🐾 Pawcare Welfare
 
 **Pawcare** is a full‑stack web application built for animal shelters and pet adoption agencies to manage animal profiles, rescue reports, treatment records, and adoption requests. It features user authentication, a responsive React + Vite frontend, and an Express + MongoDB backend with Drizzle ORM support.
 
